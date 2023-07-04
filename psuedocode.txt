@@ -1,4 +1,7 @@
-function getComputerChoice (compChoice){
+let compChoice;
+let userChoice;
+
+function getComputerChoice (){
     let compNum = JSrandomNumberFunction(between 0.000-0.002) * 100;
     if compNum = 0 {
         let choice = "rock";
@@ -9,7 +12,10 @@ function getComputerChoice (compChoice){
     else{
         let choice = "paper";
     }
-    let compChoice = choice;
+    compChoice = choice;
 }
 
-function getUserChoice ()
+function getUserChoice (){
+    userChoice = prompt("enter your choice: rock, paper, or scissors ");
+    
+}

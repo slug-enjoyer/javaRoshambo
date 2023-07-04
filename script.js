@@ -16,7 +16,20 @@
 let compChoice;
 let userChoice;
 
-
 function getComputerChoice (){
-
+    let compNum = Math.floor(Math.random() * 3); //generate a random # from 0-2
+    let choice;
+    if (compNum === 0) {
+        choice = "rock";
+    }
+    else if (compNum === 1) {
+        choice = "scissors";
+    }
+    else{
+        choice = "paper";
+    }
+    compChoice = choice;
 }
+
+getComputerChoice();
+console.log(`computer chose ${compChoice}`);
