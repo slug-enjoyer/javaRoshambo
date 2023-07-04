@@ -1,0 +1,15 @@
+function getComputerChoice (compChoice){
+    let compNum = JSrandomNumberFunction(between 0.000-0.002) * 100;
+    if compNum = 0 {
+        let choice = "rock";
+    }
+    else if compNum = 1 {
+        let choice = "scissors";
+    }
+    else{
+        let choice = "paper";
+    }
+    let compChoice = choice;
+}
+
+function getUserChoice ()

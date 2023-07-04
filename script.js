@@ -9,7 +9,12 @@
 //the game runs the two choices against each other.
 //The other choice is to make the game part more robust. 
 //I think I would rather have it uniformed.
+//Finally, the script will need to output the result,
+//utilizing another function that inputs the result 
+//into a template literal.
 
+let compChoice;
+let userChoice;
 
 
 function getComputerChoice (){
