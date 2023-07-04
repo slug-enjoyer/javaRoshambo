@@ -19,8 +19,10 @@ let userChoice;
 function getComputerChoice (){
     let compNum = Math.floor(Math.random() * 3); //generate a random # from 0-2
     let choice;
-    if (compNum === 0) {
-        choice = "rock";
+    if (compNum === 0) { //gotta remember to use the === instead of =(declarative) for tests
+        choice = "rock"; //note, we dont use let here. let would declare the variable,
+                        //moving it outside the desired scope and creating an undefined
+                        //variable.
     }
     else if (compNum === 1) {
         choice = "scissors";
@@ -28,8 +30,9 @@ function getComputerChoice (){
     else{
         choice = "paper";
     }
-    compChoice = choice;
+    compChoice = choice; //assigns the chosen item to the outside variable compChoice
 }
 
-getComputerChoice();
-console.log(`computer chose ${compChoice}`);
+// getComputerChoice();
+// console.log(`computer chose ${compChoice}`); these were just for testing
+
