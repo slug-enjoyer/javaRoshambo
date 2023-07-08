@@ -19,12 +19,12 @@ let userChoice;
 function getComputerChoice (){
     let compNum = Math.floor(Math.random() * 3); //generate a random # from 0-2
     let choice;
-    if (compNum === 0) { //gotta remember to use the === instead of =(declarative) for tests
+    if (compNum == 0) { //gotta remember to use the === instead of =(declarative) for tests
         choice = "rock"; //note, we dont use let here. let would declare the variable,
                         //moving it outside the desired scope and creating an undefined
                         //variable.
     }
-    else if (compNum === 1) {
+    else if (compNum == 1) {
         choice = "scissors";
     }
     else{
@@ -63,6 +63,34 @@ function getUserChoice (){
 
 function winner(userChoice,compChoice){
     console.log(`the user chose ${userChoice} and AI chose ${compChoice}`)
+    
+    if (userChoice == "rock" && compChoice == "paper"){
+        console.log("you lose.");
+    }
+    else if (userChoice == 'rock' && compChoice == "scissors"){
+        console.log("you win!");
+    }
+    else if (userChoice == "rock" && compChoice == "rock"){
+        console.log("it's a draw...");
+    }
+    else if (userChoice == 'scissors' && compChoice == 'paper'){
+        console.log("you win!");
+    }
+    else if (userChoice == 'scissors' && compChoice == 'scissors'){
+        console.log("its a draw...");
+    }
+    else if(userChoice == 'scissors' && compChoice == 'rock'){
+        console.log('you lose.')
+    }
+    else if (userChoice == 'paper' && compChoice == 'scissors'){
+        console.log('you lose.');
+    }
+    else if (userChoice == 'paper' && compChoice == 'rock'){
+        console.log('you win!');
+    }
+    else if (userChoice == 'paper' && compChoice == 'paper'){
+        console.log('its a draw...');
+    }
 }
 
 winner(getUserChoice(),getComputerChoice());
