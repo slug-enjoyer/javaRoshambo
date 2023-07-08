@@ -1,5 +1,6 @@
 let compChoice;
 let userChoice;
+let outcome;
 
 function getComputerChoice (){
     let compNum = JSrandomNumberFunction(between 0.000-0.002) * 100;
@@ -16,6 +17,17 @@ function getComputerChoice (){
 }
 
 function getUserChoice (){
-    userChoice = prompt("enter your choice: rock, paper, or scissors ");
+    for (let x = true, !!x){
+        userChoice = prompt("enter your choice: rock, paper, or scissors ").toLowerCase;
     
+        if (userChoice==="rock" || userChoice==="scissors" || userChoice==="paper"){
+        x = false;
+        return userChoice;
+        }
+    
+        else {
+        console.log("please input only rock, paper, or scissors");    
+        x = true
+        }
+    }
 }

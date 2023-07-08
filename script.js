@@ -36,3 +36,29 @@ function getComputerChoice (){
 // getComputerChoice();
 // console.log(`computer chose ${compChoice}`); these were just for testing
 
+function getUserChoice (){
+    let x = true; //creates a variable to set the conditional for the while loop
+    while(x = true){ //this will keep looping until the user breaks the loop
+                     //by correctly entering one of the expected options
+
+// first we collect data from the user. the prompt also has a toLowerCase method
+// so that even if the user enters it with capitals, it will be uniform for the 
+// program to understand.
+        userChoice = prompt("enter your choice: rock, paper, or scissors").toLowerCase();
+
+//this if block checks to see if the user has entered an acceptable option.
+//if they do, then the conditional variable is switched to false to end the loop.        
+        if (userChoice=="rock" || userChoice=="scissors" || userChoice=="paper"){
+        x = false;
+        return userChoice;
+        }
+    
+        else { //this else just tells the user to enter a valid option
+        console.log("please input only rock, paper, or scissors");    
+        x = true //keeps the conditional variable true so that the loop continues
+        }
+    }
+    
+}
+
+getUserChoice();
