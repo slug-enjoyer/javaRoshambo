@@ -30,7 +30,7 @@ function getComputerChoice (){
     else{
         choice = "paper";
     }
-    compChoice = choice; //assigns the chosen item to the outside variable compChoice
+    return choice; //assigns the chosen item to the outside variable compChoice
 }
 
 // getComputerChoice();
@@ -61,4 +61,8 @@ function getUserChoice (){
     
 }
 
-getUserChoice();
+function winner(userChoice,compChoice){
+    console.log(`the user chose ${userChoice} and AI chose ${compChoice}`)
+}
+
+winner(getUserChoice(),getComputerChoice());
