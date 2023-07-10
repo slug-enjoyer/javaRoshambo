@@ -13,8 +13,8 @@
 //utilizing another function that inputs the result 
 //into a template literal.
 
-let compChoice;
-let userChoice;
+// let compChoice; i dont think i actually need this.
+// let userChoice;
 
 function getComputerChoice (){
     let compNum = Math.floor(Math.random() * 3); //generate a random # from 0-2
@@ -61,36 +61,61 @@ function getUserChoice (){
     
 }
 
-function winner(userChoice,compChoice){
-    console.log(`the user chose ${userChoice} and AI chose ${compChoice}`)
+//this is how i originally made the winner determining function. It's so bloated though
+// function winner(userChoice,compChoice){
+//     console.log(`the user chose ${userChoice} and AI chose ${compChoice}`)
     
-    if (userChoice == "rock" && compChoice == "paper"){
-        console.log("you lose.");
-    }
-    else if (userChoice == 'rock' && compChoice == "scissors"){
-        console.log("you win!");
-    }
-    else if (userChoice == "rock" && compChoice == "rock"){
-        console.log("it's a draw...");
-    }
-    else if (userChoice == 'scissors' && compChoice == 'paper'){
-        console.log("you win!");
-    }
-    else if (userChoice == 'scissors' && compChoice == 'scissors'){
-        console.log("its a draw...");
-    }
-    else if(userChoice == 'scissors' && compChoice == 'rock'){
-        console.log('you lose.')
-    }
-    else if (userChoice == 'paper' && compChoice == 'scissors'){
-        console.log('you lose.');
-    }
-    else if (userChoice == 'paper' && compChoice == 'rock'){
-        console.log('you win!');
-    }
-    else if (userChoice == 'paper' && compChoice == 'paper'){
-        console.log('its a draw...');
-    }
-}
+//     if (userChoice == "rock" && compChoice == "paper"){
+//         console.log("you lose.");
+//     }
+//     else if (userChoice == 'rock' && compChoice == "scissors"){
+//         console.log("you win!");
+//     }
+//     else if (userChoice == "rock" && compChoice == "rock"){
+//         console.log("it's a draw...");
+//     }
+//     else if (userChoice == 'scissors' && compChoice == 'paper'){
+//         console.log("you win!");
+//     }
+//     else if (userChoice == 'scissors' && compChoice == 'scissors'){
+//         console.log("its a draw...");
+//     }
+//     else if(userChoice == 'scissors' && compChoice == 'rock'){
+//         console.log('you lose.')
+//     }
+//     else if (userChoice == 'paper' && compChoice == 'scissors'){
+//         console.log('you lose.');
+//     }
+//     else if (userChoice == 'paper' && compChoice == 'rock'){
+//         console.log('you win!');
+//     }
+//     else if (userChoice == 'paper' && compChoice == 'paper'){
+//         console.log('its a draw...');
+//     }
+// }
 
-winner(getUserChoice(),getComputerChoice());
+// this is the way it should be. We define the draw situation first, then all
+// the user winning criteria, and last put in what happens when you lose.
+// you dont need to define every little situation when you use OR
+function roshambo(userChoice, compChoice) {
+    console.log(`the user chose ${userChoice} and the AI chose ${compChoice}`);
+    
+    if (userChoice === compChoice) {
+      console.log("it's a draw...");
+    }
+    
+    else if ( //all the win qualifiers in one statement. each one in seperated by an OR
+      (userChoice === "rock" && compChoice === "scissors") ||   
+      (userChoice === "scissors" && compChoice === "paper") ||
+      (userChoice === "paper" && compChoice === "rock")
+    ) {
+      console.log("you win!");
+    }
+
+    else {
+      console.log("you lose.");
+    }
+  }
+//so to run a single iteration of the game, we invoke the roshambo function and have
+//it use the two choice functions as parameters
+roshambo (getUserChoice(),getComputerChoice());
