@@ -17,6 +17,9 @@
 // let userChoice;
 let userWinCounter = 0; //a counter to show how many times the user has one
 let compWinCounter = 0;
+
+console.log("type game() to begin the game of a lifetime");
+
 function game(){
   for (let i = 0; i < 5; i++){
     function getComputerChoice (){
@@ -125,7 +128,7 @@ function game(){
     //it use the two choice functions as parameters
     roshambo (getUserChoice(),getComputerChoice());
   }
-  
+
   console.log(`You won ${userWinCounter} times. Computer won ${compWinCounter} times.`)
   
   if (userWinCounter>compWinCounter){
