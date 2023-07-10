@@ -101,7 +101,7 @@ function roshambo(userChoice, compChoice) {
     console.log(`the user chose ${userChoice} and the AI chose ${compChoice}`);
     
     if (userChoice === compChoice) {
-      console.log("it's a draw...");
+      console.log(`${userChoice} vs ${compChoice}, it's a draw...`);
     }
     
     else if ( //all the win qualifiers in one statement. each one in seperated by an OR
@@ -109,11 +109,11 @@ function roshambo(userChoice, compChoice) {
       (userChoice === "scissors" && compChoice === "paper") ||
       (userChoice === "paper" && compChoice === "rock")
     ) {
-      console.log("you win!");
+      console.log(`${userChoice} beats ${compChoice}, you win!`);
     }
 
     else {
-      console.log("you lose.");
+      console.log(`${compChoice} beats ${userChoice}, you lose.`);
     }
   }
 //so to run a single iteration of the game, we invoke the roshambo function and have
